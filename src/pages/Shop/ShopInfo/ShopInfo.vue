@@ -1,5 +1,5 @@
 <template>
-
+  <h1>shopInfo</h1>
 </template>
 <script>
   export default {}
