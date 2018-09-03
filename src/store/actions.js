@@ -5,14 +5,20 @@ import {
   REQ_SHOPS,
   SAVE_USER_INFO,
   REQ_USER_INFO,
-  REQ_LOGOUT
+  REQ_LOGOUT,
+  REQ_SHOP_INFO,
+  REQ_SHOP_RATING,
+  REQ_SHOP_GOODS
 } from "./mutations-types";
 import {
   reqAddress,
   reqCategorys,
   reqShops,
   reqUserInfo,
-  reqLogout
+  reqLogout,
+  reqShopInfo,
+  reqShopRatings,
+  reqShopGoods
 } from "../api"
 
 export default {
@@ -49,5 +55,28 @@ export default {
       if(result.code===0){
         commit(REQ_LOGOUT);
       }
+    },
+    async getShopInfo({commit}){
+      const result = await reqShopInfo();
+      if(result.code===0){
+        const info = result.data;
+        info.score = 3.5
+        commit(REQ_SHOP_INFO,{info});
+      }
+    },
+    async getShopRating({commit}){
+      const result = await reqShopRatings();
+      if(result.code===0){
+        const ratings = result.data;
+        commit(REQ_SHOP_RATING,{ratings});
+      }
+    },
+    async getShopGoods({commit},db){
+      const result = await reqShopGoods();
+      if(result.code===0){
+        const goods = result.data;
+        commit(REQ_SHOP_GOODS,{goods});
+      }
+      db && db();
     }
 }

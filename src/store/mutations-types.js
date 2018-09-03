@@ -14,4 +14,9 @@ export const SAVE_USER_INFO="save_user_info";
 export const REQ_USER_INFO="req_user_info";
 /*用户登出*/
 export const REQ_LOGOUT="req_logout";
-
+/*获取商家信息*/
+export const REQ_SHOP_INFO="req_shop_info";
+/*获取商家评价信息*/
+export const REQ_SHOP_RATING="req_shop_rating";
+/*获取商家商品数组*/
+export const REQ_SHOP_GOODS="req_shop_goods";

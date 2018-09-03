@@ -7,7 +7,7 @@ import Profile from '../pages/Profile/Profile.vue'
 import Login from '../pages/Login/Login.vue'
 
 import Shop from '../pages/Shop/Shop.vue';
-import ShopFoods from '../pages/Shop/ShopFoods/ShopFoods.vue'
+import ShopFoods from '../pages/Shop/ShopGoods/ShopGoods.vue'
 import ShopInfo from '../pages/Shop/ShopInfo/ShopInfo.vue'
 import ShopRating from '../pages/Shop/ShopRating/ShopRating.vue'
 Vue.use(VerRouter);
@@ -50,7 +50,7 @@ export default new VerRouter({
       component:Shop,
       children:[
         {
-          path:"/shop/foods",
+          path:"/shop/goods",
           component:ShopFoods
         },
         {
@@ -60,6 +60,10 @@ export default new VerRouter({
         {
           path:"/shop/rating",
           component:ShopRating
+        },
+        {
+          path: "",
+          redirect: "/shop/goods"
         }
       ]
     },

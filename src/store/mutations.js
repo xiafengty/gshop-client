@@ -4,7 +4,10 @@ import {
   REQ_SHOPS,
   SAVE_USER_INFO,
   REQ_USER_INFO,
-  REQ_LOGOUT
+  REQ_LOGOUT,
+  REQ_SHOP_INFO,
+  REQ_SHOP_RATING,
+  REQ_SHOP_GOODS
 } from "./mutations-types";
 export default {
   [REQ_ADDRESS](state,{address}){
@@ -24,5 +27,14 @@ export default {
   },
   [REQ_LOGOUT](state){
     state.userInfo=[];
+  },
+  [REQ_SHOP_INFO](state,{info}){
+    state.info=info;
+  },
+  [REQ_SHOP_RATING](state,{ratings}){
+    state.ratings=ratings;
+  },
+  [REQ_SHOP_GOODS](state,{goods}){
+    state.goods=goods;
   }
 }

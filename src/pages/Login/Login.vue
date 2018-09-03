@@ -96,7 +96,6 @@
           }
         },1000);
         const result = await reqSendcode(this.phone);
-        console.log(result);
         if(result.code===0){
           Toast('发送成功');
         }else{
@@ -136,7 +135,7 @@
             const userInfo =result.data;
             this.$store.dispatch("saveUserInfo",{userInfo});
             Toast("登录成功");
-            this.$router.push("/profile");
+            this.$router.replace("/profile");
         }else{
           Toast(result.msg);
         }
